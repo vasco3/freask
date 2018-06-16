@@ -1,0 +1,36 @@
+{
+  "name": "freask",
+  "version": "1.0.0",
+  "description": "Obsess about real-life challenges",
+  "main": "index.js",
+  "dependencies": {
+    "@zeit/next-css": "^0.2.0",
+    "next": "^6.0.3",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-vis": "^1.9.4"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.74.0"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vasco3/freask.git"
+  },
+  "keywords": [
+    "react",
+    "react-vis"
+  ],
+  "author": "Jorge Cuadra Fueyo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vasco3/freask/issues"
+  },
+  "homepage": "https://github.com/vasco3/freask#readme"
+}
