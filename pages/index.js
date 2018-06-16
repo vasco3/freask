@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { XYPlot, LineSeries } from 'react-vis';
 import '../node_modules/react-vis/dist/style.css';
+import Hello from '../md/hello.md';
 
 class Index extends Component {
   render() {
@@ -18,6 +19,7 @@ class Index extends Component {
     ];
     return (
       <div className="App">
+        <Hello />
         <XYPlot height={300} width={300}>
           <LineSeries data={data} />
         </XYPlot>

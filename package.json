@@ -4,13 +4,18 @@
   "description": "Obsess about real-life challenges",
   "main": "index.js",
   "dependencies": {
+    "@mdx-js/loader": "^0.11.0",
     "@zeit/next-css": "^0.2.0",
+    "@zeit/next-mdx": "^1.1.0",
     "next": "^6.0.3",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-vis": "^1.9.4"
+    "react-vis": "^1.9.4",
+    "remark-emoji": "^2.0.1",
+    "remark-images": "^0.8.1"
   },
   "devDependencies": {
+    "@mdx-js/mdx": "^0.10.1",
     "flow-bin": "^0.74.0"
   },
   "scripts": {
