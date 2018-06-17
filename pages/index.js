@@ -1,28 +1,22 @@
 import React, { Component } from 'react';
-import { XYPlot, LineSeries } from 'react-vis';
 import '../node_modules/react-vis/dist/style.css';
-import Hello from '../md/hello.md';
+import RiskChart from '../components/risk-chart';
+import { problemMassager } from '../utils/massager';
+import problems from '../data/problems';
 
 class Index extends Component {
   render() {
-    const data = [
-      { x: 0, y: 8 },
-      { x: 1, y: 5 },
-      { x: 2, y: 4 },
-      { x: 3, y: 9 },
-      { x: 4, y: 1 },
-      { x: 5, y: 7 },
-      { x: 6, y: 6 },
-      { x: 7, y: 3 },
-      { x: 8, y: 2 },
-      { x: 9, y: 0 },
-    ];
+    const data = problemMassager(problems);
     return (
       <div className="App">
-        <Hello />
-        <XYPlot height={300} width={300}>
-          <LineSeries data={data} />
-        </XYPlot>
+        <h1>Freask</h1>
+        <h3>Proactive list of exploding problems</h3>
+
+        <p>
+          Obsess with how to avoid exploding problems. play the chess and be
+          moves ahead.
+        </p>
+        <RiskChart data={data} />
       </div>
     );
   }
