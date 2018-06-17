@@ -11,13 +11,24 @@ class Index extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      crosshairValues: [],
       filterTag: 'none',
     };
     this.onFilterChange = this.onFilterChange.bind(this);
+    this._onMouseLeave = this._onMouseLeave.bind(this);
+    this._onNearestX = this._onNearestX.bind(this);
   }
   onFilterChange(event) {
     this.setState({ filterTag: event.target.name });
   }
+
+  _onNearestX(value) {
+    this.setState({ crosshairValues: [value] });
+  }
+  _onMouseLeave() {
+    this.setState({ crosshairValues: [] });
+  }
+
   render() {
     const data = problemMassager(problems, this.state.filterTag);
     return (
@@ -29,7 +40,15 @@ class Index extends Component {
           Obsess with how to avoid exploding problems. play the chess and be
           moves ahead.
         </p>
-        <RiskChart data={data} />
+
+        <RiskChart
+          crosshair={{
+            onMouseLeave: this._onMouseLeave,
+            onNearestX: this._onNearestX,
+            values: this.state.crosshairValues,
+          }}
+          data={data}
+        />
         {['none', ...TAGS_VALUES].map(tag => (
           <button name={tag} key={tag} onClick={this.onFilterChange}>
             {tag}
