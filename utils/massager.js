@@ -5,7 +5,7 @@ export function problemMassager(problems, filterTag) {
       : problems.filter(problem => problem.tags.includes(filterTag));
 
   return filteredProblems.map((problem, index) => {
-    const impact = problem.impact + index * 0.01;
+    const impact = problem.impact + index * 0.001;
     const probability = problem.probability + index * 0.01;
 
     return {
